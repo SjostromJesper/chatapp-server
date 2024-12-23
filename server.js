@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
 
     socket.on('message', (message) => {
         console.log('message:', message)
-        sendToAll({username, message})
+        sendToAll(username, message)
     })
 })
 
@@ -37,5 +37,5 @@ server.listen(3000, () => {
 const sendToAll = (username, message) => {
     console.log(message)
 
-    io.emit('message', {username, message})
+    io.emit('message', username, message)
 }
