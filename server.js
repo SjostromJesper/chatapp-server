@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
 
     socket.on('message', (message) => {
         console.log('message:', message)
-        sendToAll(username, message)
+        sendToAll({username, message})
     })
 })
 
